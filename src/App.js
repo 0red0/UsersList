@@ -5,8 +5,11 @@ import UsersList from "./components/Users/UsersList";
 function App() {
    const [usersArr, setUsersArr] = useState([]);
 
-   const addUserHandler = (arr) => {
-      setUsersArr(arr);
+   const addUserHandler = (a, b) => {
+      setUsersArr((prevUser) => [
+         ...prevUser,
+         { name: a, age: b, id: Date.now() },
+      ]);
    };
 
    return (
